@@ -1,44 +1,124 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from "./assets/logo.png";
-import "./Headers.css";
 
 function Headers() {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+
   return (
-    <div className="headers">
-      <div className="logo_box">
-        <img className="logo_img" src={logo} alt="logo" />
-        <span className="logo_title">Webzer Yazılım</span>
-      </div>
-      <div className="list-div">
-        <ul className="list-ul">
-          <li className="list-li">
-            <a href="#" className="list-a">
-              Anasayfa
-            </a>
-          </li>
+    <header className="w-full bg-gradient-to-r from-red-800 to-red-900 text-white shadow-md">
+      <div className="container mx-auto flex items-center justify-between p-4">
+        <div className="flex items-center gap-3">
+          <img
+            src={logo}
+            alt="logo"
+            className="w-16 h-16 md:w-20 md:h-20 rounded-full object-cover shadow-lg"
+          />
+          <span className="font-bold text-xl md:text-2xl tracking-wide">
+            Webzer Yazılım
+          </span>
+        </div>
 
-          <li className="list-li">
-            <a href="#" className="list-a">
-              Hakkımızda
-            </a>
-          </li>
+        <button
+          className="md:hidden ml-4 focus:outline-none"
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          <svg
+            className="w-8 h-8 transition-transform duration-300"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            {menuOpen ? (
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            ) : (
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            )}
+          </svg>
+        </button>
 
-          <li className="list-li">
-            <a href="#" className="list-a">
-              İletişim
-            </a>
-          </li>
+        <nav
+          className={`flex flex-col md:flex-row md:items-center gap-4 mt-4 md:mt-0 transition-all duration-300 ${
+            menuOpen ? "flex" : "hidden md:flex"
+          }`}
+        >
+          <a
+            href="#"
+            className="hover:text-gray-300 transition-colors duration-200"
+          >
+            Anasayfa
+          </a>
+          <a
+            href="#"
+            className="hover:text-gray-300 transition-colors duration-200"
+          >
+            Hakkımızda
+          </a>
+          <a
+            href="#"
+            className="hover:text-gray-300 transition-colors duration-200"
+          >
+            İletişim
+          </a>
 
-          <div className="dropdown-div">
-            <ul className="dropdown-ul">
-              <li className="dropdown-li">
-                <a href="" className="dropdown-a"></a>
-              </li>
-            </ul>
+          <div className="relative">
+            <button
+              onClick={() => setDropdownOpen(!dropdownOpen)}
+              className="hover:text-gray-300 cursor-pointer transition-colors duration-200 flex items-center gap-1"
+            >
+              Hizmetler
+              <svg
+                className={`w-4 h-4 transform transition-transform duration-300 ${
+                  dropdownOpen ? "rotate-180" : ""
+                }`}
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </button>
+            {dropdownOpen && (
+              <ul className="absolute flex flex-col bg-red-700 mt-2 p-2 rounded shadow-lg min-w-[150px] z-50">
+                <li>
+                  <a
+                    href="#"
+                    className="text-white px-3 py-2 hover:bg-red-600 rounded transition-colors duration-200 block"
+                  >
+                    Dijital Mağazam
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="text-white px-3 py-2 hover:bg-red-600 rounded transition-colors duration-200 block"
+                  >
+                    Randevu Sistemi
+                  </a>
+                </li>
+              </ul>
+            )}
           </div>
-        </ul>
+        </nav>
       </div>
-    </div>
+    </header>
   );
 }
 
