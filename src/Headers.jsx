@@ -100,7 +100,7 @@ function Headers() {
               <ul className="absolute flex flex-col bg-red-700 mt-2 p-2 rounded shadow-lg min-w-[150px] z-50">
                 <li>
                   <Link
-                    to="/meeting"
+                    to="/https://dukkan.bio/"
                     className="text-white px-3 py-2 hover:bg-red-600 rounded transition-colors duration-200 block"
                   >
                     Dijital Mağazam
@@ -108,7 +108,7 @@ function Headers() {
                 </li>
                 <li>
                   <Link
-                    to="/appointment"
+                    to="/meeting"
                     className="text-white px-3 py-2 hover:bg-red-600 rounded transition-colors duration-200 block"
                   >
                     Randevu Sistemi
