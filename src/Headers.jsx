@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import logo from "./assets/logo.png";
 
 function Headers() {
@@ -53,24 +54,24 @@ function Headers() {
             menuOpen ? "flex" : "hidden md:flex"
           }`}
         >
-          <a
-            href="#"
+          <Link
+            to="/"
             className="hover:text-gray-300 transition-colors duration-200"
           >
             Anasayfa
-          </a>
-          <a
-            href="#"
+          </Link>
+          <Link
+            to="/about"
             className="hover:text-gray-300 transition-colors duration-200"
           >
             Hakkımızda
-          </a>
-          <a
-            href="#"
+          </Link>
+          <Link
+            to="/contact"
             className="hover:text-gray-300 transition-colors duration-200"
           >
             İletişim
-          </a>
+          </Link>
 
           <div className="relative">
             <button
@@ -98,20 +99,20 @@ function Headers() {
             {dropdownOpen && (
               <ul className="absolute flex flex-col bg-red-700 mt-2 p-2 rounded shadow-lg min-w-[150px] z-50">
                 <li>
-                  <a
-                    href="#"
+                  <Link
+                    to="/meeting"
                     className="text-white px-3 py-2 hover:bg-red-600 rounded transition-colors duration-200 block"
                   >
                     Dijital Mağazam
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    href="#"
+                  <Link
+                    to="/appointment"
                     className="text-white px-3 py-2 hover:bg-red-600 rounded transition-colors duration-200 block"
                   >
                     Randevu Sistemi
-                  </a>
+                  </Link>
                 </li>
               </ul>
             )}
