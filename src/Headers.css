@@ -1,0 +1,41 @@
+.logo_img {
+  border-radius: 50%;
+  /* border: 5px solid black; */
+
+  display: inline-block;
+}
+.headers {
+  background-color: rgb(65, 29, 29);
+  height: 14vh;
+  width: 100%;
+}
+.logo_title {
+  font-weight: 700;
+  font-size: 170%;
+  margin-left: 2%;
+}
+.logo_box {
+  display: inline-flex;
+  align-items: center;
+  width: 30%;
+  margin: 1%;
+}
+.list-div {
+  display: inline-block;
+}
+
+.list-li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+}
+.list-ul {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+}
+.list-a {
+  text-decoration: none;
+  color: black;
+}
