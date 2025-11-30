@@ -47,79 +47,145 @@ function Headers() {
             )}
           </svg>
         </button>
+
+        <nav className="hidden md:flex items-center gap-6">
+          <Link
+            to="/"
+            className="hover:text-gray-300 transition-colors duration-200"
+          >
+            Anasayfa
+          </Link>
+          <Link
+            to="/about"
+            className="hover:text-gray-300 transition-colors duration-200"
+          >
+            Hakkımızda
+          </Link>
+          <Link
+            to="/contact"
+            className="hover:text-gray-300 transition-colors duration-200"
+          >
+            İletişim
+          </Link>
+
+          <div className="relative">
+            <button
+              onClick={() => setDropdownOpen(!dropdownOpen)}
+              className="hover:text-gray-300 flex items-center gap-1 transition-colors duration-200"
+            >
+              Hizmetler
+              <svg
+                className={`w-4 h-4 transform transition-transform duration-300 ${
+                  dropdownOpen ? "rotate-180" : ""
+                }`}
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </button>
+
+            {dropdownOpen && (
+              <ul className="absolute bg-red-700 mt-2 p-2 rounded shadow-lg min-w-[150px] z-50">
+                <li>
+                  <a
+                    href="https://dukkan.bio/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-white px-3 py-2 hover:bg-red-600 rounded block"
+                  >
+                    Dijital Mağazam
+                  </a>
+                </li>
+                <li>
+                  <Link
+                    to="/meeting"
+                    className="text-white px-3 py-2 hover:bg-red-600 rounded block"
+                  >
+                    Randevu Sistemi
+                  </Link>
+                </li>
+              </ul>
+            )}
+          </div>
+        </nav>
       </div>
 
-      <nav
-        className={`md:flex md:items-center md:justify-center md:gap-6 transition-all duration-300 ${
-          menuOpen ? "flex flex-col gap-4 p-4" : "hidden md:flex"
-        }`}
-      >
-        <Link
-          to="/"
-          className="hover:text-gray-300 transition-colors duration-200"
-        >
-          Anasayfa
-        </Link>
-        <Link
-          to="/about"
-          className="hover:text-gray-300 transition-colors duration-200"
-        >
-          Hakkımızda
-        </Link>
-        <Link
-          to="/contact"
-          className="hover:text-gray-300 transition-colors duration-200"
-        >
-          İletişim
-        </Link>
-
-        <div className="relative md:static">
-          <button
-            onClick={() => setDropdownOpen(!dropdownOpen)}
-            className="hover:text-gray-300 flex items-center gap-1 transition-colors duration-200"
+      {menuOpen && (
+        <nav className="flex flex-col gap-4 p-4 md:hidden">
+          <Link
+            to="/"
+            className="hover:text-gray-300 transition-colors duration-200"
           >
-            Hizmetler
-            <svg
-              className={`w-4 h-4 transform transition-transform duration-300 ${
-                dropdownOpen ? "rotate-180" : ""
-              }`}
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M19 9l-7 7-7-7"
-              />
-            </svg>
-          </button>
+            Anasayfa
+          </Link>
+          <Link
+            to="/about"
+            className="hover:text-gray-300 transition-colors duration-200"
+          >
+            Hakkımızda
+          </Link>
+          <Link
+            to="/contact"
+            className="hover:text-gray-300 transition-colors duration-200"
+          >
+            İletişim
+          </Link>
 
-          {dropdownOpen && (
-            <ul className="flex flex-col bg-red-700 mt-2 p-2 rounded shadow-lg min-w-[150px] z-50 md:absolute">
-              <li>
-                <a
-                  href="https://dukkan.bio/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-white px-3 py-2 hover:bg-red-600 rounded block"
-                >
-                  Dijital Mağazam
-                </a>
-              </li>
-              <li>
-                <Link
-                  to="/meeting"
-                  className="text-white px-3 py-2 hover:bg-red-600 rounded block"
-                >
-                  Randevu Sistemi
-                </Link>
-              </li>
-            </ul>
-          )}
-        </div>
-      </nav>
+          <div>
+            <button
+              onClick={() => setDropdownOpen(!dropdownOpen)}
+              className="hover:text-gray-300 flex items-center gap-1 transition-colors duration-200"
+            >
+              Hizmetler
+              <svg
+                className={`w-4 h-4 transform transition-transform duration-300 ${
+                  dropdownOpen ? "rotate-180" : ""
+                }`}
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </button>
+
+            {dropdownOpen && (
+              <ul className="flex flex-col bg-red-700 mt-2 p-2 rounded shadow-lg min-w-[150px]">
+                <li>
+                  <a
+                    href="https://dukkan.bio/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-white px-3 py-2 hover:bg-red-600 rounded block"
+                  >
+                    Dijital Mağazam
+                  </a>
+                </li>
+                <li>
+                  <Link
+                    to="/meeting"
+                    className="text-white px-3 py-2 hover:bg-red-600 rounded block"
+                  >
+                    Randevu Sistemi
+                  </Link>
+                </li>
+              </ul>
+            )}
+          </div>
+        </nav>
+      )}
     </header>
   );
 }
