@@ -129,7 +129,7 @@ const App = () => {
           {step < 3 && (
             <button
               onClick={nextStep}
-              className="ml-auto px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600"
+              className="ml-auto px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 bg"
             >
               İleri
             </button>

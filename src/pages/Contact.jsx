@@ -38,7 +38,7 @@ const WhatsappContactSection = () => {
         <div className="mt-12">
           <h3 className="text-2xl font-bold text-gray-800 mb-4">Instagram</h3>
           <a
-            href="https://www.instagram.com/@webzeryazilim/"
+            href="https://www.instagram.com/webzeryazilim/"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center text-pink-500 hover:text-pink-600 font-semibold text-lg transition-colors"
